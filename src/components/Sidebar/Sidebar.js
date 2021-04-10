@@ -1,5 +1,5 @@
 import './Sidebar.css';
-import SidebarRow from './SidebarRow';
+import SidebarRow from '../SidebarRow/SidebarRow.js';
 
 // icons
 import HomeIcon from '@material-ui/icons/Home';

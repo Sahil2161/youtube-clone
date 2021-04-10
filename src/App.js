@@ -1,8 +1,8 @@
 import './App.css';
-import Header from './Header'
-import Sidebar from './Sidebar';
-import RecommendedVideos from './RecommendedVideos';
-import SearchPage from './SearchPage';
+import Header from './components/Header/Header.js';
+import Sidebar from './components/Sidebar/Sidebar.js';
+import RecommendedVideos from './components/RecommendedVideos/RecommendedVideos.js';
+import SearchPage from './components/SeachPage/SearchPage.js';
 
 // routing
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
@@ -31,8 +31,6 @@ function App() {
         </Switch>
       
       </Router>
-      
-      
     </div>
   );
 }

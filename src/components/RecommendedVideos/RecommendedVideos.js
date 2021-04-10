@@ -1,5 +1,5 @@
 import './RecommendedVideos.css';
-import VideoCard from './VideoCard';
+import VideoCard from '../VideoCard/VideoCard.js';
 
 
 function RecommendedVideos() {
