@@ -1,3 +1,4 @@
+
 import './App.css';
 import Header from './components/Header/Header.js';
 import Sidebar from './components/Sidebar/Sidebar.js';
@@ -7,6 +8,8 @@ import SearchPage from './components/SeachPage/SearchPage.js';
 // routing
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
+
+const apiKey = 'AIzaSyA4N-Kc6TW8iKy5SCs5rN_y1yg7UgyM__8';
 
 function App() {
   return (
