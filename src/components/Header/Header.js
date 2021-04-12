@@ -10,15 +10,18 @@ import NotificationsIcon from '@material-ui/icons/Notifications';
 import Avatar from '@material-ui/core/Avatar';
 import { Link } from 'react-router-dom';
 
-function Header() {
+function Header(props) {
   const [inputSearch, setInpputSearch] = useState('');
 
   return (
     <div className="header">
       <div className="header__left">
         <MenuIcon />
+        
+        {/* Home button */}
         <Link to = '/'>
-          <img 
+          <img
+            onClick={() => props.onChange('')} 
             className="header__logo" 
             alt="yt-logo"
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/YouTube_Logo_2017.svg/512px-YouTube_Logo_2017.svg.png"
@@ -26,6 +29,8 @@ function Header() {
           </Link>
       </div>
 
+
+      {/* Search field */}
       <div className="header__input">
         <input
           type="text"
@@ -33,11 +38,14 @@ function Header() {
           value={inputSearch}
           placeholder="Search"
         />
-        <Link to={`/search/${inputSearch}`}>
-          <SearchIcon className="header__inputButton"/>
-        </Link>
+        
+        <SearchIcon 
+          onClick={() => props.onChange(inputSearch)} 
+          className="header__inputButton"
+        />
       </div>
       
+
       <div className="header__right">
         <VideoCallIcon className="header__icon"/>
         <AppsIcon className="header__icon" />

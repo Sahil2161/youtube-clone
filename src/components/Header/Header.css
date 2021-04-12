@@ -43,6 +43,10 @@
     border-left: 1px solid lightgray;
 }
 
+.header__inputButton:hover{
+    cursor: pointer;
+}
+
 .header__right {
     display: flex;
     align-items: center;
