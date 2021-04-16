@@ -10,8 +10,6 @@ import SearchPage from './components/SeachPage/SearchPage.js';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 
-const apiKey = 'AIzaSyA4N-Kc6TW8iKy5SCs5rN_y1yg7UgyM__8';
-
 function App() {
   const [search, setSearch] = useState('');
 

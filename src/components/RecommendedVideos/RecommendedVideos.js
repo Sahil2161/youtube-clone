@@ -2,11 +2,30 @@ import { useState, useEffect } from 'react';
 import './RecommendedVideos.css';
 import VideoCard from '../VideoCard/VideoCard.js';
 
+import apiKey from '../api/apiKey';
+import YouTube from '../api/youtube';
 
 function RecommendedVideos(props) {
-  
-  useEffect(() => {
+  const [videos, setVideos] = useState([]);
+  const [selectedVideo, setSelectedVideo] = useState('');
+  const [videoId, setVideoId] = useState('');
+  const [comments, setComments] = useState([])
 
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await YouTube.get('search', {
+        params: {
+          part: 'snippet',
+          maxResults: 5,
+          key: apiKey,
+          q: props.search
+        }
+      })
+      setVideos(response.data.items);
+      setSelectedVideo(response.data.items[1]);
+      setVideoId(response.data.items[1].id.videoId)
+    }
+    fetchData();
   },[props.search])
 
   if(props.search.length === 0) {
