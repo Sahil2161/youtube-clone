@@ -11,8 +11,8 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 
 function App() {
+  //state variable for search query
   const [search, setSearch] = useState('');
-
 
   return (
     <div className="app">
