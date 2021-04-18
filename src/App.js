@@ -1,3 +1,5 @@
+
+import { useState } from 'react';
 import './App.css';
 import Header from './components/Header/Header.js';
 import Sidebar from './components/Sidebar/Sidebar.js';
@@ -9,25 +11,20 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 
 function App() {
+  const [search, setSearch] = useState('');
+
+
   return (
     <div className="app">
       <Router>
-        <Header />
+        <Header onChange={(inputSearch) => setSearch(inputSearch)}/>
         <Switch>
-          <Route exact path="/">
+          <Route path="/">
             <div className="app__page">
               <Sidebar />
-              <RecommendedVideos />
+              <RecommendedVideos search={search}/>
             </div>
           </Route>
-
-          <Route path="/search/:searchTerm">
-            <div className="app__page">
-              <Sidebar />
-              <SearchPage />
-            </div>
-          </Route>
-
         </Switch>
       
       </Router>
