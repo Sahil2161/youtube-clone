@@ -13,7 +13,8 @@
 .videoCard__thumbnail {
     /* display: block; */
     height: 140px;
-    width: 100%
+    width: 100%;
+    object-fit:cover;
 }
 
 .videoCard__info {

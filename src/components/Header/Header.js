@@ -33,6 +33,7 @@ function Header(props) {
       {/* Search field */}
       <div className="header__input">
         <input
+          onKeyPress={(e)=> e.key==='Enter' ? props.onChange(inputSearch): null}
           type="text"
           onChange={e => setInpputSearch(e.target.value)}
           value={inputSearch}

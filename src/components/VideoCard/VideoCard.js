@@ -1,22 +1,31 @@
 import Avatar from '@material-ui/core/Avatar';
 import './VideoCard.css';
 
-function VideoCard({ image, title, channel, views, timestamp, channelImage }) {
+// alt={channel}
+// src={channelImage}
+function VideoCard(props) {
   return (
     <div className='videoCard'>
-      <img className='videoCard__thumbnail' src={image} alt='thumbnail' />
+      <img 
+        width={props?.video?.snippet?.thumbnails.high.width} 
+        heigth={props?.video?.snippet?.thumbnails.high.heigth} 
+        className='videoCard__thumbnail' 
+        src={props?.video?.snippet?.thumbnails.high.url} 
+        alt='thumbnail' 
+      />
+
       <div className='videoCard__info'>
         <Avatar
           className='videoCard__avatar'
-          alt={channel}
-          src={channelImage}
+          alt={props?.video?.snippet?.channelTitle[0]}
+          // src={`https://www.youtube.com/embed/${props?.video?.snippet?.channelId} `}  
         />
 
         <div className='videoCard__text'>
-          <h4 title='Title'>{title}</h4>
-          <p title='channel'>{channel}</p>
+          <h4 title='Title'>{props?.video?.snippet?.title}</h4>
+          <p title='channel'>{props?.video?.snippet?.channelTitle}</p>
           <p>
-            {views} · {timestamp}
+            views · timestamp
           </p>
         </div>
       </div>
