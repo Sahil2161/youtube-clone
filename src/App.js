@@ -4,7 +4,6 @@ import './App.css';
 import Header from './components/Header/Header.js';
 import Sidebar from './components/Sidebar/Sidebar.js';
 import RecommendedVideos from './components/RecommendedVideos/RecommendedVideos.js';
-import SearchPage from './components/SeachPage/SearchPage.js';
 
 // routing
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';

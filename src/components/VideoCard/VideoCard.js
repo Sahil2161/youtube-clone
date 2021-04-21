@@ -1,11 +1,10 @@
 import Avatar from '@material-ui/core/Avatar';
 import './VideoCard.css';
 
-// alt={channel}
-// src={channelImage}
+
 function VideoCard(props) {
   return (
-    <div className='videoCard'>
+    <div onClick={()=>props?.onClick(props?.video)} className='videoCard'>
       <img 
         width={props?.video?.snippet?.thumbnails.high.width} 
         heigth={props?.video?.snippet?.thumbnails.high.heigth} 
