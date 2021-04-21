@@ -1,6 +1,7 @@
 {
   "name": "youtube-clone",
   "version": "0.1.0",
+  "homepage":"https://youtube-clone-react-1.herokuapp.com/"
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.11.3",
